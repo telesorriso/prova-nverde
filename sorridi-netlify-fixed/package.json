@@ -1,0 +1,7 @@
+{
+  "name": "sorridi-netlify",
+  "version": "1.0.0",
+  "dependencies": {
+    "@trieb.work/zadarma": "^1.3.0"
+  }
+}
