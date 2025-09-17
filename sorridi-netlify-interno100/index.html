@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dentista urgente 24/7</title>
+</head>
+<body>
+  <h1>Dentista urgente 24/7</h1>
+  <form id="callForm">
+    <input type="tel" id="phone" placeholder="+39 3XX XXX XXXX" required />
+    <button type="submit">Parla con un dentista ora</button>
+  </form>
+  <p id="status"></p>
+  <script>
+    document.getElementById("callForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const phone = document.getElementById("phone").value;
+      document.getElementById("status").innerText = "Chiamata in corso...";
+      const res = await fetch("/.netlify/functions/call", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone })
+      });
+      const data = await res.json();
+      document.getElementById("status").innerText = JSON.stringify(data);
+    });
+  </script>
+</body>
+</html>
