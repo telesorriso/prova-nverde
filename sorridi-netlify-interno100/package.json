@@ -1,8 +1,0 @@
-{
-  "name": "sorridi-netlify-interno100",
-  "version": "1.0.0",
-  "dependencies": {
-    "@trieb.work/zadarma": "^1.0.6",
-    "node-fetch": "^2.6.7"
-  }
-}
